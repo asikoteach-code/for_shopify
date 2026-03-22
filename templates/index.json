@@ -1,25 +1,5 @@
 {
   "sections": {
-    "announcement_bar": {
-      "type": "header-announcements",
-      "blocks": {
-        "announcement_1": {
-          "type": "announcement",
-          "settings": {
-            "text": "Free shipping on orders over $50 - Shop Now",
-            "text_color": "#FFFFFF",
-            "background_color": "#5DCCC8",
-            "link": "/collections/all"
-          }
-        }
-      },
-      "block_order": ["announcement_1"],
-      "settings": {
-        "height": 50,
-        "alignment": "center",
-        "color_scheme": "scheme-1"
-      }
-    },
     "hero": {
       "type": "hero",
       "settings": {
@@ -30,7 +10,6 @@
         "subheading": "Soft silicone massage gloves that your furry friend will love",
         "button_label": "Shop Now",
         "button_link": "/collections/all",
-        "image_1": "shopify://shop_images/mil1.jpg",
         "media_type_1": "image",
         "blurred_reflection": true,
         "background_color_opacity": 100,
@@ -74,17 +53,6 @@
         "color_scheme": "scheme-1"
       }
     },
-    "product_benefits": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Why Pet Parents Love It",
-        "collection": "",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false
-      }
-    },
     "featured_product": {
       "type": "featured-product",
       "blocks": {
@@ -113,13 +81,9 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {}
-        },
-        "share": {
-          "type": "share",
-          "settings": {}
         }
       },
-      "block_order": ["title", "price", "description", "variant_picker", "quantity", "buy_buttons", "share"],
+      "block_order": ["title", "price", "description", "variant_picker", "quantity", "buy_buttons"],
       "settings": {
         "product": "",
         "hide_variants": false,
@@ -143,7 +107,7 @@
         "testimonial_2": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "Best purchase I've made for my cat! She actually sits still now instead of running away. The quality is amazing and it arrived quickly.",
+            "testimonial_text": "Best purchase I've made for my cat! She actually sits still now instead of running away. The quality is amazing.",
             "customer_name": "Michael T.",
             "rating": 5,
             "verified_buyer": true
@@ -162,80 +126,6 @@
       "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
       "settings": {
         "heading": "Loved by 50,000+ Pet Parents",
-        "section_width": "full",
-        "color_scheme": "scheme-1"
-      }
-    },
-    "before_after": {
-      "type": "before-after",
-      "blocks": {
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "stat_number": "95%",
-            "stat_label": "Customer Satisfaction"
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "stat_number": "2-3x",
-            "stat_label": "Faster Grooming"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "stat_number": "100%",
-            "stat_label": "Pet-Safe Design"
-          }
-        }
-      },
-      "block_order": ["stat_1", "stat_2", "stat_3"],
-      "settings": {
-        "heading": "See the Difference",
-        "subheading": "Real results with our silicone grooming gloves",
-        "show_stats": true,
-        "section_width": "full",
-        "color_scheme": "scheme-1"
-      }
-    },
-    "customer_gallery": {
-      "type": "customer-gallery",
-      "blocks": {
-        "image_1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/mil4.jpg",
-            "caption": "Happy grooming time"
-          }
-        },
-        "image_2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/mil5.jpg",
-            "caption": "Pet approved"
-          }
-        },
-        "image_3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/mil6.jpg",
-            "caption": "Love it"
-          }
-        },
-        "image_4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/mil7.jpg",
-            "caption": "Best gloves ever"
-          }
-        }
-      },
-      "block_order": ["image_1", "image_2", "image_3", "image_4"],
-      "settings": {
-        "heading": "The Pets Are Obsessed",
-        "subheading": "See happy pets using our grooming gloves",
         "section_width": "full",
         "color_scheme": "scheme-1"
       }
@@ -282,40 +172,20 @@
       }
     },
     "guarantee": {
-      "type": "featured-collection",
+      "type": "guarantee",
       "settings": {
-        "title": "Our Guarantee",
-        "collection": "",
-        "products_to_show": 0,
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "show_view_all": false
-      }
-    },
-    "email_signup": {
-      "type": "email-signup",
-      "settings": {
-        "heading": "Join Our Pet-Loving Community",
-        "subheading": "Get exclusive tips, grooming hacks, and special offers delivered to your inbox",
-        "placeholder": "Enter your email",
-        "button_label": "Subscribe",
-        "show_name_field": false,
-        "color_scheme": "scheme-1",
-        "section_width": "full"
+        "heading": "Our Guarantee",
+        "section_width": "full",
+        "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
-    "announcement_bar",
     "hero",
     "how_it_works",
-    "product_benefits",
     "featured_product",
     "testimonials",
-    "before_after",
-    "customer_gallery",
     "faq",
-    "guarantee",
-    "email_signup"
+    "guarantee"
   ]
 }
