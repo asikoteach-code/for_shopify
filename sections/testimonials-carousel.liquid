@@ -1,0 +1,180 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}">
+  <div class="spacing-style testimonials-wrapper" style="{%  render 'spacing-style', settings: section.settings %}">
+    {% if section.settings.heading != blank %}
+      <div class="testimonials__header text-center">
+        <h2 class="heading h2">{{ section.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="testimonials__carousel">
+      {% for block in section.blocks %}
+        <div class="testimonial__card" {{ block.shopify_attributes }}>
+          <div class="testimonial__stars">
+            {% for i in (1..5) %}
+              {% if i <= block.settings.rating %}
+                ⭐
+              {% else %}
+                ☆
+              {% endif %}
+            {% endfor %}
+          </div>
+          <p class="testimonial__text">{{ block.settings.testimonial_text }}</p>
+          <p class="testimonial__author">— {{ block.settings.customer_name }}</p>
+          {% if block.settings.verified_buyer %}
+            <span class="testimonial__badge">✓ Verified Buyer</span>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .testimonials-wrapper {
+    max-width: 100%;
+  }
+
+  .testimonials__header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .testimonials__carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .testimonial__card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border, #e0f2f0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(93, 204, 200, 0.15);
+  }
+
+  .testimonial__stars {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.25rem;
+  }
+
+  .testimonial__text {
+    color: var(--color-foreground, #5a5a5a);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .testimonial__author {
+    color: var(--color-foreground-heading, #2c3e50);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonial__badge {
+    display: inline-block;
+    background-color: #5DCCC8;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials__carousel {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .testimonial__card {
+      padding: 1.5rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Testimonials Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Loved by Pet Parents"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1",
+      "options": [
+        {
+          "value": "scheme-1",
+          "label": "Scheme 1"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "default": "full",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "testimonial_text",
+          "label": "Testimonial Text",
+          "default": "This product changed my life!"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer Name",
+          "default": "Jane Doe"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "default": 5
+        },
+        {
+          "type": "checkbox",
+          "id": "verified_buyer",
+          "label": "Verified Buyer",
+          "default": true
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

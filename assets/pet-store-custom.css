@@ -1,0 +1,336 @@
+/* Pet Grooming Store Custom Styles */
+
+:root {
+  --color-primary: #5DCCC8;
+  --color-primary-hover: #4bb3b0;
+  --color-secondary: #FFB6C1;
+  --color-accent-yellow: #FFD700;
+  --color-accent-orange: #F4A460;
+  --color-text-dark: #2c3e50;
+  --color-text-light: #5a5a5a;
+  --color-border-light: #e0f2f0;
+  --border-radius: 12px;
+  --border-radius-lg: 24px;
+  --transition-smooth: all 0.3s ease;
+}
+
+/* Trust Elements & Social Proof */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(93, 204, 200, 0.1), rgba(255, 182, 193, 0.1));
+  border: 1px solid var(--color-border-light);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-lg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.trust-badge::before {
+  content: "✓";
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Social Proof Numbers */
+.social-proof-counter {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(93, 204, 200, 0.05);
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+}
+
+.social-proof-counter .number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.social-proof-counter .label {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+}
+
+/* Verified Buyer Badge */
+.verified-badge {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-lg);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Sticky Elements */
+.sticky-cta {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 1rem;
+  border-top: 1px solid var(--color-border-light);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+}
+
+.sticky-cta-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.sticky-cta-button:hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.02);
+}
+
+/* Urgency & Scarcity Elements */
+.urgency-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #FFD700, #F4A460);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.inventory-warning {
+  color: #E74C3C;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Star Rating Display */
+.star-rating {
+  display: inline-flex;
+  gap: 0.25rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+}
+
+.star-rating.filled {
+  color: #FFD700;
+}
+
+.star-rating.empty {
+  color: #DDD;
+}
+
+/* Product Card Enhancements */
+.product-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* Rounded Elements */
+.rounded-button {
+  border-radius: var(--border-radius-lg);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.rounded-button--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.rounded-button--primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(93, 204, 200, 0.3);
+}
+
+.rounded-button--secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.rounded-button--secondary:hover {
+  background-color: rgba(93, 204, 200, 0.1);
+}
+
+/* Card Styling */
+.card-elevated {
+  background: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-smooth);
+  padding: 1.5rem;
+}
+
+.card-elevated:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(93, 204, 200, 0.2);
+}
+
+/* Text Styling */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-dark {
+  color: var(--color-text-dark);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+/* Spacing Utilities */
+.spacing-lg {
+  padding: 3rem;
+}
+
+.spacing-md {
+  padding: 2rem;
+}
+
+.spacing-sm {
+  padding: 1rem;
+}
+
+.gap-lg {
+  gap: 2rem;
+}
+
+.gap-md {
+  gap: 1.5rem;
+}
+
+.gap-sm {
+  gap: 1rem;
+}
+
+/* Heading Styles */
+.heading {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.heading.h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.heading.h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.heading.h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.heading.h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.body-text {
+  color: var(--color-text-light);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  :root {
+    --border-radius-lg: 20px;
+  }
+
+  .heading.h1 {
+    font-size: 2rem;
+  }
+
+  .heading.h2 {
+    font-size: 1.75rem;
+  }
+
+  .heading.h3 {
+    font-size: 1.5rem;
+  }
+
+  .sticky-cta {
+    padding: 0.75rem;
+  }
+
+  .spacing-lg {
+    padding: 1.5rem;
+  }
+
+  .gap-lg {
+    gap: 1rem;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus States */
+button:focus,
+a:focus,
+input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .sticky-cta,
+  .trust-badge {
+    display: none;
+  }
+}
