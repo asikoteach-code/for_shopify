@@ -15,6 +15,7 @@
         layout-panel-flex--column
         section-content-wrapper
         mobile-column
+        error-404-wrapper
       "
       style="
         {% render 'layout-panel-style', settings: section.settings %}
@@ -25,6 +26,83 @@
     </div>
   </div>
 </div>
+
+{% stylesheet %}
+  .error-404-wrapper {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    gap: 48px;
+  }
+
+  /* Enhanced typography for 404 page */
+  .error-404-wrapper .h1,
+  .error-404-wrapper h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 200;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--color-foreground-heading);
+    font-family: var(--font-h1--family);
+  }
+
+  .error-404-wrapper .h2,
+  .error-404-wrapper h2 {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.7;
+  }
+
+  .error-404-wrapper .paragraph,
+  .error-404-wrapper p {
+    font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--color-foreground);
+    max-width: 600px;
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  /* Layout sections */
+  .error-404-wrapper .layout-panel-flex {
+    gap: 24px;
+  }
+
+  /* Footer section styling */
+  .error-404-wrapper .footer-content {
+    width: 100%;
+    max-width: 100%;
+    border-top: 1px solid var(--color-border);
+    padding-top: 40px;
+    margin-top: 60px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .error-404-wrapper {
+      padding: 40px 16px;
+      gap: 32px;
+    }
+
+    .error-404-wrapper .h1,
+    .error-404-wrapper h1 {
+      font-size: 2rem;
+    }
+
+    .error-404-wrapper .footer-content {
+      padding-top: 32px;
+      margin-top: 48px;
+    }
+  }
+{% endstylesheet %}
 
 {% schema %}
 {

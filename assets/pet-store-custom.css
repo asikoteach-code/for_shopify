@@ -334,3 +334,254 @@ input:focus {
     display: none;
   }
 }
+
+/* 404 Page Premium Styling */
+.error-404-wrapper {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(93, 204, 200, 0.02) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle decorative elements */
+.error-404-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(93, 204, 200, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.error-404-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main content wrapper */
+.error-404-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 404 Header Section Styling */
+.error-404-wrapper .section--page-width {
+  width: 100%;
+  padding: 0;
+}
+
+/* Content text blocks */
+.error-404-wrapper .text-block {
+  margin: 0;
+}
+
+/* Enhanced heading in 404 */
+.error-404-wrapper .h1,
+.error-404-wrapper h1,
+.error-404-wrapper .heading.h1 {
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+}
+
+/* Secondary text */
+.error-404-wrapper .h2,
+.error-404-wrapper h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* Description text */
+.error-404-wrapper .paragraph,
+.error-404-wrapper p,
+.error-404-wrapper .body-text {
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+/* Logo in 404 footer */
+.error-404-wrapper .logo {
+  margin: 2rem 0 0 0;
+}
+
+.error-404-wrapper .logo img {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Menu/Navigation in footer */
+.error-404-wrapper .menu {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-404-wrapper .menu li {
+  margin: 0;
+}
+
+.error-404-wrapper .menu a {
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.error-404-wrapper .menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.error-404-wrapper .menu a:hover::after {
+  width: 100%;
+}
+
+.error-404-wrapper .menu a:hover {
+  color: var(--color-primary);
+}
+
+/* Email signup in footer */
+.error-404-wrapper .email-signup {
+  margin-top: 2rem;
+}
+
+.error-404-wrapper .email-signup-heading {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.error-404-wrapper .email-signup-description {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.75;
+}
+
+.error-404-wrapper .email-input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.error-404-wrapper .email-input-wrapper input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.error-404-wrapper .email-input-wrapper input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(93, 204, 200, 0.1);
+}
+
+.error-404-wrapper .email-input-wrapper button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.error-404-wrapper .email-input-wrapper button:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Social links styling */
+.error-404-wrapper .social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.error-404-wrapper .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(93, 204, 200, 0.1);
+  border-radius: 50%;
+  color: var(--color-primary);
+  transition: var(--transition-smooth);
+}
+
+.error-404-wrapper .social-links a:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Divider in footer */
+.error-404-wrapper .divider {
+  height: 1px;
+  background-color: var(--color-border-light);
+  margin: 2rem 0;
+  width: 100%;
+}
+
+/* Copyright text */
+.error-404-wrapper .copyright {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  opacity: 0.6;
+  margin-top: 2rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .error-404-wrapper::before,
+  .error-404-wrapper::after {
+    display: none;
+  }
+
+  .error-404-wrapper .menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .error-404-wrapper .email-input-wrapper {
+    flex-direction: column;
+  }
+
+  .error-404-wrapper {
+    gap: 24px;
+  }
+}
