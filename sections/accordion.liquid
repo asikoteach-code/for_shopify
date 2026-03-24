@@ -1,0 +1,178 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style">
+  <div class="spacing-style-padding">
+    {% if section.settings.heading != blank %}
+      <div class="accordion-section__header text-center">
+        <h2 class="heading h2">{{ section.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="accordion-section__list">
+      {% for block in section.blocks %}
+        <div class="accordion-section__item" {{ block.shopify_attributes }}>
+          <details class="accordion-section__details">
+            <summary class="accordion-section__summary">
+              {{ block.settings.heading }}
+              <span class="accordion-section__icon">+</span>
+            </summary>
+            <div class="accordion-section__content">
+              {{ block.settings.content }}
+            </div>
+          </details>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.button_label != blank %}
+      <div class="accordion-section__footer text-center">
+        <a href="{{ section.settings.button_link }}" class="button button--secondary">
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .accordion-section__header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .accordion-section__list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .accordion-section__item {
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+  }
+
+  .accordion-section__item:first-child {
+    border-top: 1px solid var(--color-border, #e0e0e0);
+  }
+
+  .accordion-section__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+
+  .accordion-section__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-section__icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  details[open] .accordion-section__icon {
+    transform: rotate(45deg);
+  }
+
+  .accordion-section__content {
+    padding: 0 0 1.25rem;
+    color: var(--color-foreground, #5a5a5a);
+    line-height: 1.6;
+  }
+
+  .accordion-section__footer {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .button--secondary {
+    background-color: transparent;
+    color: var(--color-foreground);
+    padding: 0.875rem 2rem;
+    border-radius: 28px;
+    border: 2px solid currentColor;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .button--secondary:hover {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Accordion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "default": "full",
+      "options": [
+        { "value": "full", "label": "Full" },
+        { "value": "standard", "label": "Standard" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion-row",
+      "name": "FAQ Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Question",
+          "default": "Your question here"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Answer",
+          "default": "Your answer here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion"
+    }
+  ]
+}
+{% endschema %}
